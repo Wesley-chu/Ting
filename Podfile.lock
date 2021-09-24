@@ -1,0 +1,20 @@
+PODS:
+  - KeychainAccess (4.2.2)
+  - YoutubePlayer-in-WKWebView (0.3.5)
+
+DEPENDENCIES:
+  - KeychainAccess
+  - YoutubePlayer-in-WKWebView
+
+SPEC REPOS:
+  trunk:
+    - KeychainAccess
+    - YoutubePlayer-in-WKWebView
+
+SPEC CHECKSUMS:
+  KeychainAccess: c0c4f7f38f6fc7bbe58f5702e25f7bd2f65abf51
+  YoutubePlayer-in-WKWebView: cfbf46da51d7370662a695a8f351e5fa1d3e1008
+
+PODFILE CHECKSUM: d706f57679158d0c1944459ba304873952d33cda
+
+COCOAPODS: 1.10.1
