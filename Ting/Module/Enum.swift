@@ -45,4 +45,9 @@ enum contents {
     case gmrTrianing
 }
 
+enum colorType {
+    case word
+    case background
+}
+
 

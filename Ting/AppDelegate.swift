@@ -14,11 +14,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     var window: UIWindow?
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-        
-//        guard let image2 = UIImage(named: "left") else { return true }
-//        let naviAppearance = UINavigationBar.appearance()
-//        naviAppearance.backIndicatorImage = image2
-//        naviAppearance.tintColor = UIColor(hexString: "FFCC00")
         //Account.shared.logout()
         
         return true

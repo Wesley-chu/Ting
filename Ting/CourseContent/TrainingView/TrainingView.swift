@@ -10,6 +10,12 @@ import UIKit
 
 class TrainingView :UIView {
     
+    @IBOutlet weak var voiceVw: UIView!
+    @IBOutlet weak var voiceBt: UIButton!
+    @IBOutlet weak var answerLb: UILabel!
+    
+    @IBOutlet weak var trainingCollectionView: UICollectionView!
+    @IBOutlet weak var doneBt: UIButton!
     
     
     // コードから呼び出す際に使用される

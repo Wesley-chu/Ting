@@ -10,6 +10,11 @@ import UIKit
 
 class GuideView :UIView {
     
+    @IBOutlet weak var constCLb: UILabel!
+    @IBOutlet weak var constJLb: UILabel!
+    @IBOutlet weak var exampleCLb: UILabel!
+    @IBOutlet weak var exampleJLb: UILabel!
+    @IBOutlet weak var exampleVoiceBt: UIButton!
     
     
     // コードから呼び出す際に使用される

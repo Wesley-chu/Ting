@@ -44,8 +44,6 @@ class GrammarTrainingViewController: UIViewController,UICollectionViewDelegate,U
         itemCollectionView.delegate = self
         itemCollectionView.dataSource = self
         queryGmrTraining(unitId: unitId ?? "")
-        //Note here, that setting the estimatedItemSize to a non-zero value enables automatic resizing of the cells. This is key when working with dynamically sizing cells (with labels for example).
-        collectionLayout.estimatedItemSize = CGSize(width: 1, height: 1)
         itemCollectionView.collectionViewLayout = collectionLayout
         
     }
@@ -122,7 +120,7 @@ class GrammarTrainingViewController: UIViewController,UICollectionViewDelegate,U
         guard let cellView = collectionView.cellForItem(at: indexPath)?.contentView.viewWithTag(1) as? UILabel else { return true }
         let item = gmrTraining.item[gmrTraining.page][indexPath.row]
         item.btn = !item.btn!
-        cellView.backgroundColor = gmrTraining.setBtnColor(bool: item.btn!)
+        cellView.backgroundColor = gmrTraining.setBtnColor(type: .background, bool: item.btn!)
         answerLabel.text! = gmrTraining.checkWord(text: item.word ?? "")
         
         return true

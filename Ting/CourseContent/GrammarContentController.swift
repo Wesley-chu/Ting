@@ -10,7 +10,8 @@ import UIKit
 import CloudKit
 import AVFoundation
 
-class GrammarContentController: NaviArrangeViewController, UITableViewDelegate,UITableViewDataSource {
+class GrammarContentController: NaviArrangeViewController, UITableViewDelegate,UITableViewDataSource,UICollectionViewDelegate,UICollectionViewDataSource {
+    
     
     @IBOutlet weak var wordBt: UIButton!
     @IBOutlet weak var gmrGuideBt: UIButton!
@@ -33,13 +34,18 @@ class GrammarContentController: NaviArrangeViewController, UITableViewDelegate,U
     var loading = ActivityIndicatorView()
     var voice = VoiceManager()
     var naviItemTitle = "単語"
+    var collectionLayout = LeftAlignedCollectionViewFlowLayout()
+    
+    var correctText:String?
+    var gmrTraining = GrammarTraining()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         initView()
         updateView(type: .word)
-        queryGmrGuide(unitId: unitId ?? "")
         
+        queryGmrGuide(unitId: unitId ?? "")
+        queryGmrTraining(unitId: unitId ?? "")
         
         
     }
@@ -85,10 +91,49 @@ class GrammarContentController: NaviArrangeViewController, UITableViewDelegate,U
         voice.speak(text: exText, language: .zh_TW, rate: 0.3, pitch: 1.0)
     }
     
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        if !gmrTraining.item.isEmpty && gmrTraining.item.count <= 5{
+            return gmrTraining.item[gmrTraining.page].count
+        }else{
+            return 0
+        }
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell_training", for: indexPath) as! trainingCollectionViewCell
+        cell.layer.borderColor = UIColor.cusLightYellow.cgColor
+        cell.layer.borderWidth = 1.3
+        cell.layer.cornerRadius = 5
+        cell.layer.masksToBounds = true
+        if UIScreen.main.bounds.size.height <= 568{
+            cell.trainingLb.font = UIFont.boldSystemFont(ofSize: 20)
+        }
+        
+        let item = gmrTraining.item[gmrTraining.page][indexPath.row]
+        cell.trainingLb.text = "\(item.word ?? "")　"
+        
+        return cell
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, shouldHighlightItemAt indexPath: IndexPath) -> Bool {
+        guard let cellView = collectionView.cellForItem(at: indexPath)?.contentView.viewWithTag(1) else { return true }
+        guard let cellLb = collectionView.cellForItem(at: indexPath)?.contentView.viewWithTag(2) as? UILabel else { return true }
+        let item = gmrTraining.item[gmrTraining.page][indexPath.row]
+        
+        item.btn = !item.btn!
+        cellView.backgroundColor = gmrTraining.setBtnColor(type: .background, bool: item.btn!)
+        cellLb.textColor = gmrTraining.setBtnColor(type: .word, bool: item.btn!)
+        
+        trainingView.answerLb.text! = gmrTraining.checkWord(text: "\(item.word ?? "")　")
+        
+        return true
+    }
+    
+    
     func updateView(type: contents){
-        let yellow = UIColor(hexString: "FFCC00")
-        let darkGray = UIColor(hexString: "AEAEB2")
-        let lightGray = UIColor(hexString: "F2F2F7")
+        let yellow = UIColor.cusLightYellow
+        let darkGray = UIColor.cusDarkGray
+        let lightGray = UIColor.cusLightGray
         switch type {
         case .word:
             wordBt.setTitleColor(yellow, for: .normal)
@@ -148,6 +193,24 @@ class GrammarContentController: NaviArrangeViewController, UITableViewDelegate,U
         wordView.wordTableView.delegate = self
         wordView.wordTableView.dataSource = self
         wordView.wordTableView.register(UINib(nibName: "wordTableViewCell", bundle: nil), forCellReuseIdentifier: "cell_word")
+        
+        trainingView.trainingCollectionView.delegate = self
+        trainingView.trainingCollectionView.dataSource = self
+        trainingView.trainingCollectionView.register(UINib(nibName: "trainingCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "cell_training")
+        trainingView.trainingCollectionView.collectionViewLayout = collectionLayout
+        trainingView.doneBt.layer.cornerRadius = 5
+        trainingView.doneBt.layer.masksToBounds = true
+        trainingView.voiceVw.layer.cornerRadius = 10
+        trainingView.voiceVw.layer.masksToBounds = true
+        
+    }
+    
+    @objc func exVoice(){
+        guard let exText = content.example?.components(separatedBy: "_")[0] else { return }
+        //let AVSpeechUtteranceMinimumSpeechRate: Float
+        //let AVSpeechUtteranceDefaultSpeechRate: Float
+        //let AVSpeechUtteranceMaximumSpeechRate: Float
+        voice.speak(text: exText, language: .zh_TW, rate: 0.4, pitch: 1.0)
     }
     
     func queryGmrGuide(unitId:String){
@@ -167,10 +230,16 @@ class GrammarContentController: NaviArrangeViewController, UITableViewDelegate,U
                 self.content.words = record["words"] as? String
                 let C = self.content.example?.components(separatedBy: "_")[0] ?? ""
                 let J = self.content.example?.components(separatedBy: "_")[1] ?? ""
+                print("test1")
+                print("test1")
+                print("test1")
+                print("test1")
                 DispatchQueue.main.async {
-                    //self.constClabel.text = record["constC"] as? String
-                    //self.constJlabel.text = record["constJ"] as? String
-                    //self.exLabel.text = C + "\n" + J
+                    self.guideView.constCLb.text = record["constC"] as? String
+                    self.guideView.constJLb.text = record["constJ"] as? String
+                    self.guideView.exampleCLb.text = C
+                    self.guideView.exampleJLb.text = J
+                    self.guideView.exampleVoiceBt.addTarget(self, action: #selector(self.exVoice), for: .touchUpInside)
                 }
             }
         }
@@ -212,6 +281,40 @@ class GrammarContentController: NaviArrangeViewController, UITableViewDelegate,U
             }
             DispatchQueue.main.async {
                 self.loading.activityIndicatorView(flg: .end, view: self.view)
+            }
+        }
+        database.add(operation)
+    }
+    
+    func queryGmrTraining(unitId:String){
+        let database = DBManager.shared.database
+        let query = DBManager.shared.queryGrammarTraining
+        let operation = CKQueryOperation(query: query)
+        operation.queuePriority = .veryHigh
+        operation.resultsLimit = 500
+        operation.recordFetchedBlock = {(records:CKRecord?) in
+            guard let record = records else { return }
+            if record["unitId"] as! String == unitId{
+                self.gmrTraining.unitId = record["unitId"] as? String
+                self.gmrTraining.sentence1 = record["sentence1"] as? String
+                self.gmrTraining.sentence2 = record["sentence2"] as? String
+                self.gmrTraining.sentence3 = record["sentence3"] as? String
+                self.gmrTraining.sentence4 = record["sentence4"] as? String
+                self.gmrTraining.sentence5 = record["sentence5"] as? String
+                self.gmrTraining.handleItem(src: self.gmrTraining)
+                self.correctText = self.gmrTraining.sentenceC[self.gmrTraining.page]
+                print("test2")
+                print("test2")
+                print("test2")
+                print("test2")
+                DispatchQueue.main.async {
+                    self.trainingView.trainingCollectionView.reloadData()
+                }
+            }
+        }
+        operation.queryCompletionBlock = {(cursor,error) in
+            if error != nil{
+                print(error,"queryGmrTraining error")
             }
         }
         database.add(operation)

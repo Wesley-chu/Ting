@@ -76,7 +76,7 @@ class GrammarListViewController: NaviArrangeViewController,UITableViewDelegate,U
         cView.frame.origin.x = 0
         cView.frame.origin.y = 0
         cView.frame.size.width = cView.frame.size.width - aLabel.frame.size.width
-        cView.backgroundColor = UIColor(hexString: "FFCC00")
+        cView.backgroundColor = .cusLightYellow
         bView.addSubview(cView)
         
         return aView
@@ -108,7 +108,7 @@ class GrammarListViewController: NaviArrangeViewController,UITableViewDelegate,U
     func tableView(_ tableView: UITableView, shouldHighlightRowAt indexPath: IndexPath) -> Bool {
         let cellView = tableView.cellForRow(at: indexPath)?.contentView.viewWithTag(1)
         
-        cellView?.backgroundColor = UIColor(hexString: "FFCC00")
+        cellView?.backgroundColor = .cusLightYellow
         return true
     }
     

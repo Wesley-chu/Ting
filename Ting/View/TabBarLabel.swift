@@ -58,12 +58,12 @@ class TabBarLabel:UILabel {
         }
         
         self.frame.origin.y = tabBar.bounds.minY
-        self.backgroundColor = UIColor(hexString: "5856D6")
+        self.backgroundColor = .cusIndigo
         
         self.upline.frame.size = CGSize(width: width, height: 5)
         self.upline.center.x = self.bounds.midX
         self.upline.frame.origin.y = tabBar.bounds.minY
-        self.upline.backgroundColor = UIColor(hexString: "FFCC00")
+        self.upline.backgroundColor = .cusLightYellow
         self.addSubview(self.upline)
         
         self.imageView.frame.size = CGSize(width: imageSize, height: imageSize)
@@ -86,7 +86,7 @@ class TabBarLabel:UILabel {
         self.underline.frame.size = CGSize(width: underlineWidth , height: 2)
         self.underline.center.x = self.bounds.midX
         self.underline.frame.origin.y = underlineY!
-        self.underline.backgroundColor = UIColor(hexString: "FFCC00")
+        self.underline.backgroundColor = .cusLightYellow
         self.addSubview(self.underline)
         self.underline.isHidden = true
         

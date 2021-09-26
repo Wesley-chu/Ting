@@ -20,6 +20,8 @@
 		09264FF126FA1F2A00761B5C /* voice_white.png in Resources */ = {isa = PBXBuildFile; fileRef = 09264FF026FA1F2900761B5C /* voice_white.png */; };
 		09264FF726FA4D9C00761B5C /* left.png in Resources */ = {isa = PBXBuildFile; fileRef = 09264FF626FA4D9C00761B5C /* left.png */; };
 		09264FFB26FA5B0200761B5C /* NaviArrangeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09264FFA26FA5B0200761B5C /* NaviArrangeViewController.swift */; };
+		0926504527004D0400761B5C /* trainingCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0926504327004D0400761B5C /* trainingCollectionViewCell.swift */; };
+		0926504627004D0400761B5C /* trainingCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0926504427004D0400761B5C /* trainingCollectionViewCell.xib */; };
 		097C7B0E266CAA5800EBCEBE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 097C7B0D266CAA5800EBCEBE /* AppDelegate.swift */; };
 		097C7B10266CAA5800EBCEBE /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 097C7B0F266CAA5800EBCEBE /* SceneDelegate.swift */; };
 		097C7B12266CAA5800EBCEBE /* VideoPlayerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 097C7B11266CAA5800EBCEBE /* VideoPlayerViewController.swift */; };
@@ -103,6 +105,8 @@
 		09264FF026FA1F2900761B5C /* voice_white.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = voice_white.png; sourceTree = "<group>"; };
 		09264FF626FA4D9C00761B5C /* left.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = left.png; sourceTree = "<group>"; };
 		09264FFA26FA5B0200761B5C /* NaviArrangeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NaviArrangeViewController.swift; sourceTree = "<group>"; };
+		0926504327004D0400761B5C /* trainingCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = trainingCollectionViewCell.swift; sourceTree = "<group>"; };
+		0926504427004D0400761B5C /* trainingCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = trainingCollectionViewCell.xib; sourceTree = "<group>"; };
 		097C7B0A266CAA5800EBCEBE /* Ting.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Ting.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		097C7B0D266CAA5800EBCEBE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		097C7B0F266CAA5800EBCEBE /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -216,6 +220,8 @@
 			children = (
 				0917F46526F78335009D51BE /* TrainingView.xib */,
 				0917F46A26F78346009D51BE /* TrainingView.swift */,
+				0926504427004D0400761B5C /* trainingCollectionViewCell.xib */,
+				0926504327004D0400761B5C /* trainingCollectionViewCell.swift */,
 			);
 			path = TrainingView;
 			sourceTree = "<group>";
@@ -530,6 +536,7 @@
 				097C7B1A266CAA5C00EBCEBE /* Assets.xcassets in Resources */,
 				097C7BE32676246000EBCEBE /* noRepeat.png in Resources */,
 				09264FED26FA117800761B5C /* wordTableViewCell.xib in Resources */,
+				0926504627004D0400761B5C /* trainingCollectionViewCell.xib in Resources */,
 				0917F45226F7749F009D51BE /* GuideView.xib in Resources */,
 				0988F73F26E11EC20030C8A4 /* learn.png in Resources */,
 				0988F74426E1226C0030C8A4 /* menu.png in Resources */,
@@ -632,6 +639,7 @@
 				0988F6792691BB7E0030C8A4 /* AlertView.swift in Sources */,
 				097C7BC6267233FB00EBCEBE /* VideoListViewController.swift in Sources */,
 				0988F6BA2699DA820030C8A4 /* Random.swift in Sources */,
+				0926504527004D0400761B5C /* trainingCollectionViewCell.swift in Sources */,
 				0988F6AF26949E170030C8A4 /* MainTabBarController.swift in Sources */,
 				0917F45D26F77555009D51BE /* GuideView.swift in Sources */,
 				0988F69F269318F20030C8A4 /* StartViewController.swift in Sources */,
@@ -821,6 +829,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = Ting/Ting.entitlements;
 				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 2;
 				DEVELOPMENT_TEAM = 2X49Y8FTV3;
 				INFOPLIST_FILE = Ting/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
@@ -828,10 +837,11 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+				MARKETING_VERSION = 1.0.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.Chuweilun.Ting;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -843,6 +853,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = Ting/Ting.entitlements;
 				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 2;
 				DEVELOPMENT_TEAM = 2X49Y8FTV3;
 				INFOPLIST_FILE = Ting/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
@@ -850,10 +861,11 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+				MARKETING_VERSION = 1.0.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.Chuweilun.Ting;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};

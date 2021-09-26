@@ -15,7 +15,7 @@ class NaviArrangeViewController: UIViewController {
         guard let image = UIImage(named: "left") else { return }
         let button = UIBarButtonItem(image: image, style: .plain, target: self, action: #selector(backButton))
         self.navigationItem.leftBarButtonItem = button
-        self.navigationItem.leftBarButtonItem?.tintColor = UIColor(hexString: "FFCC00")
+        self.navigationItem.leftBarButtonItem?.tintColor = .cusLightYellow
         
     }
     

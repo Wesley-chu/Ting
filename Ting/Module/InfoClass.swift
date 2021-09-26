@@ -151,12 +151,26 @@ class GrammarTraining {
         
     }
     
-    func setBtnColor(bool:Bool) -> UIColor{
+    func setBtnColor(type:colorType ,bool:Bool) -> UIColor{
         switch bool {
         case false:
-            return UIColor.clear
+            
+            switch type {
+            case .word:
+                return .cusLightYellow
+            default:
+                return .clear
+            }
+            
         default:
-            return UIColor.lightGray
+            
+            switch type {
+            case .word:
+                return .white
+            default:
+                return UIColor.cusLightYellow
+            }
+            
         }
     }
     

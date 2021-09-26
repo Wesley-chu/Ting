@@ -383,6 +383,7 @@
                                                 </subviews>
                                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                                 <constraints>
+                                                    <constraint firstAttribute="height" constant="65" id="5v8-SM-P2C"/>
                                                     <constraint firstItem="Ida-SJ-IZb" firstAttribute="leading" secondItem="1m6-Oh-oPF" secondAttribute="trailing" id="CAN-Va-dfJ"/>
                                                     <constraint firstItem="1m6-Oh-oPF" firstAttribute="top" secondItem="u6X-Rb-diI" secondAttribute="top" id="Jmo-IV-GsG"/>
                                                     <constraint firstAttribute="trailing" secondItem="Ida-SJ-IZb" secondAttribute="trailing" id="QsX-qE-V96"/>
@@ -397,9 +398,8 @@
                                         <constraints>
                                             <constraint firstItem="u6X-Rb-diI" firstAttribute="leading" secondItem="7Gm-HN-2EM" secondAttribute="leading" id="ATj-JB-Af4"/>
                                             <constraint firstAttribute="trailing" secondItem="u6X-Rb-diI" secondAttribute="trailing" id="IcM-bO-Ezm"/>
-                                            <constraint firstAttribute="height" constant="115" id="LGJ-db-vjj"/>
-                                            <constraint firstItem="u6X-Rb-diI" firstAttribute="top" secondItem="7Gm-HN-2EM" secondAttribute="top" constant="25" id="XU8-d0-dfa"/>
-                                            <constraint firstAttribute="bottom" secondItem="u6X-Rb-diI" secondAttribute="bottom" constant="25" id="bpr-Uz-AqV"/>
+                                            <constraint firstAttribute="height" constant="115" id="Y0Q-LW-skQ"/>
+                                            <constraint firstItem="u6X-Rb-diI" firstAttribute="centerY" secondItem="7Gm-HN-2EM" secondAttribute="centerY" id="hM5-tB-URn"/>
                                         </constraints>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5IQ-7Z-PKs" customClass="WordView" customModule="Ting" customModuleProvider="target">
