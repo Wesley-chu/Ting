@@ -33,12 +33,25 @@ class GrammarTrainingViewController: UIViewController,UICollectionViewDelegate,U
     @IBOutlet weak var sentenceJLabel: UILabel!
     @IBOutlet weak var nextButton: UIButton!
     
+    override func viewWillLayoutSubviews() {
+        print(self.correctView.frame.origin.y,"chu3")
+    }
+    
     override func viewDidLayoutSubviews() {
-        
+        print(self.correctView.frame.origin.y,"chu4")
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        print(self.correctView.frame.origin.y,"chu2")
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        print(self.correctView.frame.origin.y,"chu5")
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        print(self.correctView.frame.origin.y,"chu1")
         print(unitId)
         initView()
         itemCollectionView.delegate = self

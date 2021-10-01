@@ -27,17 +27,26 @@ class GrammarContentController: NaviArrangeViewController, UITableViewDelegate,U
     @IBOutlet weak var guideView: GuideView!
     @IBOutlet weak var trainingView: TrainingView!
     
+    
+    @IBOutlet weak var correctView: UIView!
+    @IBOutlet weak var sentenceLb: UILabel!
+    
+    
     var unitId:String?
     var grammarTitle:String?
     var words = [Words]()
     var content = GrammarContent()
     var loading = ActivityIndicatorView()
+    var alert = AlertView()
     var voice = VoiceManager()
     var naviItemTitle = "単語"
     var collectionLayout = LeftAlignedCollectionViewFlowLayout()
-    
     var correctText:String?
     var gmrTraining = GrammarTraining()
+    var bottom: NSLayoutConstraint?
+    var bottom2: NSLayoutConstraint?
+    var strForAnswer = ""
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -47,7 +56,8 @@ class GrammarContentController: NaviArrangeViewController, UITableViewDelegate,U
         queryGmrGuide(unitId: unitId ?? "")
         queryGmrTraining(unitId: unitId ?? "")
         
-        
+        var str = "a b c d"
+        print(str.filter{ $0 != " " },"chu1")
     }
     
     @IBAction func word(_ sender: UIButton) {
@@ -64,6 +74,25 @@ class GrammarContentController: NaviArrangeViewController, UITableViewDelegate,U
     @IBAction func gmrTraining(_ sender: UIButton) {
         updateView(type: .gmrTrianing)
     }
+    
+    @IBAction func next(_ sender: UIButton) {
+        pullCorrectView(bool: false)
+        if gmrTraining.page >= 4{ return }
+        
+        gmrTraining.page += 1
+        trainingView.answerLb.text = ""
+        strForAnswer = ""
+        correctText = gmrTraining.sentenceC[gmrTraining.page]
+        for i in trainingView.trainingCollectionView.visibleCells{
+            i.contentView.viewWithTag(1)?.backgroundColor = .clear
+            guard let trainLb = i.contentView.viewWithTag(2) as? UILabel
+            else { return }
+            trainLb.textColor = .cusLightYellow
+        }
+        gmrTraining.answer.removeAll()
+        trainingView.trainingCollectionView.reloadData()
+    }
+    
     
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -89,6 +118,18 @@ class GrammarContentController: NaviArrangeViewController, UITableViewDelegate,U
     @objc func wordsVoice(sender:UIButton){
         let exText = words[Int(sender.accessibilityIdentifier!)!].Chinese ?? ""
         voice.speak(text: exText, language: .zh_TW, rate: 0.3, pitch: 1.0)
+    }
+    
+    @objc func exVoice(){
+        guard let exText = content.example?.components(separatedBy: "_")[0] else { return }
+        //let AVSpeechUtteranceMinimumSpeechRate: Float
+        //let AVSpeechUtteranceDefaultSpeechRate: Float
+        //let AVSpeechUtteranceMaximumSpeechRate: Float
+        voice.speak(text: exText, language: .zh_TW, rate: 0.4, pitch: 1.0)
+    }
+    
+    @objc func trainingVoice(){
+        voice.speak(text: correctText ?? "", language: .zh_TW, rate: 0.4, pitch: 1.0)
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
@@ -125,6 +166,8 @@ class GrammarContentController: NaviArrangeViewController, UITableViewDelegate,U
         cellLb.textColor = gmrTraining.setBtnColor(type: .word, bool: item.btn!)
         
         trainingView.answerLb.text! = gmrTraining.checkWord(text: "\(item.word ?? "")　")
+        
+        strForAnswer = trainingView.answerLb.text!.filter{ $0 != "　" }
         
         return true
     }
@@ -202,15 +245,30 @@ class GrammarContentController: NaviArrangeViewController, UITableViewDelegate,U
         trainingView.doneBt.layer.masksToBounds = true
         trainingView.voiceVw.layer.cornerRadius = 10
         trainingView.voiceVw.layer.masksToBounds = true
+        trainingView.voiceBt.addTarget(self, action: #selector(trainingVoice), for: .touchUpInside)
+        trainingView.doneBt.addTarget(self, action: #selector(done), for: .touchUpInside)
         
+        correctView.layer.cornerRadius = 10
+        correctView.layer.masksToBounds = true
     }
     
-    @objc func exVoice(){
-        guard let exText = content.example?.components(separatedBy: "_")[0] else { return }
-        //let AVSpeechUtteranceMinimumSpeechRate: Float
-        //let AVSpeechUtteranceDefaultSpeechRate: Float
-        //let AVSpeechUtteranceMaximumSpeechRate: Float
-        voice.speak(text: exText, language: .zh_TW, rate: 0.4, pitch: 1.0)
+    @objc func done(){
+        if correctText != strForAnswer {
+            self.trainingView.answerLb.textColor = .red
+            DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 0.3) { [self] in
+                trainingView.answerLb.textColor = .black
+            }
+        }else{
+            if gmrTraining.page == 4{
+                let message = "\n" + gmrTraining.sentenceJ[gmrTraining.page] + "\n\n" + "練習完了"
+                alert.normalAlert(title: "正解！", message: message, okTitle: "確定", cancel: false, contro: self) { _ in
+                    self.navigationController?.popViewController(animated: true)
+                }
+                return
+            }
+            sentenceLb.text! = gmrTraining.sentenceJ[gmrTraining.page]
+            pullCorrectView(bool: true)
+        }
     }
     
     func queryGmrGuide(unitId:String){
@@ -318,6 +376,27 @@ class GrammarContentController: NaviArrangeViewController, UITableViewDelegate,U
             }
         }
         database.add(operation)
+    }
+    
+    func pullCorrectView(bool:Bool){
+        if !bool{
+            UIView.animate(withDuration: 0.3) {
+                self.bottom = NSLayoutConstraint.init(item: self.view, attribute: .bottom, relatedBy: .equal, toItem: self.correctView, attribute: .bottom, multiplier: 1.0, constant: -270)
+                self.bottom2?.isActive = false
+                self.bottom?.isActive = true
+                self.correctView.frame.origin.y += self.correctView.frame.size.height
+            } completion: { _ in
+                self.correctView.isHidden = true
+            }
+        }else{
+            UIView.animate(withDuration: 0.3, animations: {
+                self.correctView.isHidden = false
+                self.bottom2 = NSLayoutConstraint.init(item: self.view, attribute: .bottom, relatedBy: .equal, toItem: self.correctView, attribute: .bottom, multiplier: 1.0, constant: 30)
+                self.bottom?.isActive = false
+                self.bottom2?.isActive = true
+                self.correctView.frame.origin.y -= self.correctView.frame.size.height
+            })
+        }
     }
     
 }
