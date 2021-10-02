@@ -22,8 +22,8 @@ class IntroduceCourseViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
         self.navigationController?.navigationBar.barTintColor = .white
+        initView()
     }
     
     
@@ -48,6 +48,17 @@ class IntroduceCourseViewController: UIViewController {
                 toGrammarListViewController.postedLevel = sender as! level
             }
         }
+    }
+    
+    func initView(){
+        let arr = [level_C,level_B,level_A,level_S]
+        arr.forEach {
+            $0?.backgroundColor = .cusLightYellow
+            $0?.layer.cornerRadius = 5
+            $0?.layer.masksToBounds = true
+        }
+        
+        
     }
     
     

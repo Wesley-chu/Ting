@@ -174,53 +174,50 @@ class GrammarContentController: NaviArrangeViewController, UITableViewDelegate,U
     
     
     func updateView(type: contents){
-        let yellow = UIColor.cusLightYellow
-        let darkGray = UIColor.cusDarkGray
-        let lightGray = UIColor.cusLightGray
         switch type {
         case .word:
-            wordBt.setTitleColor(yellow, for: .normal)
-            wordLine.backgroundColor = yellow
+            wordBt.setTitleColor(.cusLightYellow, for: .normal)
+            wordLine.backgroundColor = .cusLightYellow
             wordView.isHidden = false
             
-            gmrGuideBt.setTitleColor(darkGray, for: .normal)
-            gmrGuideLine.backgroundColor = lightGray
+            gmrGuideBt.setTitleColor(.cusDarkGray, for: .normal)
+            gmrGuideLine.backgroundColor = .cusLightGray
             guideView.isHidden = true
             
-            gmrTrainingBt.setTitleColor(darkGray, for: .normal)
-            gmrTrainingLine.backgroundColor = lightGray
+            gmrTrainingBt.setTitleColor(.cusDarkGray, for: .normal)
+            gmrTrainingLine.backgroundColor = .cusLightGray
             trainingView.isHidden = true
             
             naviItemTitle = "単語"
             navigationItem.title = naviItemTitle
             
         case .gmrGuide:
-            gmrGuideBt.setTitleColor(yellow, for: .normal)
-            gmrGuideLine.backgroundColor = yellow
+            gmrGuideBt.setTitleColor(.cusLightYellow, for: .normal)
+            gmrGuideLine.backgroundColor = .cusLightYellow
             guideView.isHidden = false
             
-            wordBt.setTitleColor(darkGray, for: .normal)
-            wordLine.backgroundColor = lightGray
+            wordBt.setTitleColor(.cusDarkGray, for: .normal)
+            wordLine.backgroundColor = .cusLightGray
             wordView.isHidden = true
             
-            gmrTrainingBt.setTitleColor(darkGray, for: .normal)
-            gmrTrainingLine.backgroundColor = lightGray
+            gmrTrainingBt.setTitleColor(.cusDarkGray, for: .normal)
+            gmrTrainingLine.backgroundColor = .cusLightGray
             trainingView.isHidden = true
             
             naviItemTitle = "文法解説"
             navigationItem.title = naviItemTitle
             
         default:
-            gmrTrainingBt.setTitleColor(yellow, for: .normal)
-            gmrTrainingLine.backgroundColor = yellow
+            gmrTrainingBt.setTitleColor(.cusLightYellow, for: .normal)
+            gmrTrainingLine.backgroundColor = .cusLightYellow
             trainingView.isHidden = false
             
-            wordBt.setTitleColor(darkGray, for: .normal)
-            wordLine.backgroundColor = lightGray
+            wordBt.setTitleColor(.cusDarkGray, for: .normal)
+            wordLine.backgroundColor = .cusLightGray
             wordView.isHidden = true
             
-            gmrGuideBt.setTitleColor(darkGray, for: .normal)
-            gmrGuideLine.backgroundColor = lightGray
+            gmrGuideBt.setTitleColor(.cusDarkGray, for: .normal)
+            gmrGuideLine.backgroundColor = .cusLightGray
             guideView.isHidden = true
             
             naviItemTitle = "文法練習"
