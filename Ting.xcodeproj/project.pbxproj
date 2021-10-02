@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0917E7DC270850E100EF36E3 /* check.png in Resources */ = {isa = PBXBuildFile; fileRef = 0917E7DB270850E100EF36E3 /* check.png */; };
 		0917F44326F76C31009D51BE /* WordView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0917F44226F76C31009D51BE /* WordView.swift */; };
 		0917F45226F7749F009D51BE /* GuideView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0917F45126F7749F009D51BE /* GuideView.xib */; };
 		0917F45D26F77555009D51BE /* GuideView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0917F45C26F77555009D51BE /* GuideView.swift */; };
@@ -92,6 +93,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0917E7DB270850E100EF36E3 /* check.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = check.png; sourceTree = "<group>"; };
 		0917F44226F76C31009D51BE /* WordView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WordView.swift; sourceTree = "<group>"; };
 		0917F45126F7749F009D51BE /* GuideView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = GuideView.xib; sourceTree = "<group>"; };
 		0917F45C26F77555009D51BE /* GuideView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GuideView.swift; sourceTree = "<group>"; };
@@ -371,6 +373,7 @@
 				09264FEE26FA1F2200761B5C /* voice_yellow.png */,
 				09264FF026FA1F2900761B5C /* voice_white.png */,
 				09264FF626FA4D9C00761B5C /* left.png */,
+				0917E7DB270850E100EF36E3 /* check.png */,
 			);
 			path = image;
 			sourceTree = "<group>";
@@ -528,6 +531,7 @@
 				0988F6952691F22B0030C8A4 /* RegisterLogin.storyboard in Resources */,
 				0988F6D3269DD8940030C8A4 /* Menu.storyboard in Resources */,
 				097C7B1D266CAA5C00EBCEBE /* LaunchScreen.storyboard in Resources */,
+				0917E7DC270850E100EF36E3 /* check.png in Resources */,
 				0926338A26ECB17A001AE017 /* WordView.xib in Resources */,
 				097C7BD02674DDB400EBCEBE /* VideoPlayer.storyboard in Resources */,
 				0917F46626F78335009D51BE /* TrainingView.xib in Resources */,

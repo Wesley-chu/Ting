@@ -86,10 +86,18 @@ class GrammarListViewController: NaviArrangeViewController,UITableViewDelegate,U
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell_gmrList", for: indexPath)
         guard let view = cell.contentView.viewWithTag(1) else { return cell }
         guard let title = cell.contentView.viewWithTag(2) as? UILabel else { return cell }
+        
+        guard let check = cell.contentView.viewWithTag(4) else { return cell }
+        
         cell.selectionStyle = .none
         view.layer.shadowOpacity = 0.2
         view.layer.shadowRadius = 3
         view.layer.shadowOffset = CGSize(width: -1.0, height: 3.0)
+        
+        check.layer.cornerRadius = 14
+        check.layer.masksToBounds = true
+        check.isHidden = true
+        
         let section = indexPath.section
         let row = indexPath.row
         title.text = "　" + (grammarArr[section][row].grammarTitle ?? "")
