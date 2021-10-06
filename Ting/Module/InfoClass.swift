@@ -39,13 +39,15 @@ class GrammarList {
     var grammarId:String?
     var unitId:String?
     var grammarTitle:String?
+    var listUnitId:String?
     
-    init(levelId:String, groupId:String, grammarId:String, unitId:String, grammarTitle:String) {
+    init(levelId:String, groupId:String, grammarId:String, unitId:String, grammarTitle:String, listUnitId:String) {
         self.levelId = levelId
         self.groupId = groupId
         self.grammarId = grammarId
         self.unitId = unitId
         self.grammarTitle = grammarTitle
+        self.listUnitId = listUnitId
     }
     
 }

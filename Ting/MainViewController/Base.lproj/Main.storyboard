@@ -194,27 +194,27 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ZjG-4a-5hS">
-                                <rect key="frame" x="20" y="128" width="374" height="225"/>
+                                <rect key="frame" x="20" y="128" width="374" height="180"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="1" translatesAutoresizingMaskIntoConstraints="NO" id="oqI-SH-tbh">
-                                        <rect key="frame" x="0.0" y="0.0" width="374" height="225"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="374" height="180"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="　　お問い合わせ" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9rV-FY-Fp5">
-                                                <rect key="frame" x="0.0" y="0.0" width="374" height="74.5"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="374" height="89.5"/>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="　　アプリを評価" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LgD-4f-6jU">
-                                                <rect key="frame" x="0.0" y="75.5" width="374" height="74"/>
+                                                <rect key="frame" x="0.0" y="90.5" width="374" height="89.5"/>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="　　ツイター" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9bJ-7X-erQ">
-                                                <rect key="frame" x="0.0" y="150.5" width="374" height="74.5"/>
+                                            <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="　　ツイター" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9bJ-7X-erQ">
+                                                <rect key="frame" x="0.0" y="180" width="374" height="0.0"/>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <nil key="textColor"/>
@@ -238,7 +238,7 @@
                             <constraint firstItem="ZjG-4a-5hS" firstAttribute="top" secondItem="psn-MZ-znc" secondAttribute="top" constant="40" id="AWV-6a-DbG"/>
                             <constraint firstItem="ZjG-4a-5hS" firstAttribute="leading" secondItem="psn-MZ-znc" secondAttribute="leading" constant="20" id="Phu-Pr-gqH"/>
                             <constraint firstItem="psn-MZ-znc" firstAttribute="trailing" secondItem="ZjG-4a-5hS" secondAttribute="trailing" constant="20" id="hvW-ac-Z6c"/>
-                            <constraint firstItem="ZjG-4a-5hS" firstAttribute="height" secondItem="k2Q-Pj-4fp" secondAttribute="height" multiplier="225:813" id="z6C-Ri-XRX"/>
+                            <constraint firstItem="ZjG-4a-5hS" firstAttribute="height" secondItem="k2Q-Pj-4fp" secondAttribute="height" multiplier="180:813" id="z6C-Ri-XRX"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="メニュー" id="LpT-sq-EdW"/>

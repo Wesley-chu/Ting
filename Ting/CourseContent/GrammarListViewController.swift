@@ -15,12 +15,18 @@ class GrammarListViewController: NaviArrangeViewController,UITableViewDelegate,U
     var postedLevel:level = .C
     var grammarArr = [[GrammarList]]()
     var grammarTitle:String?
-    
+    var listUnitId:String?
+    var listArr = [String]()
     
     var loading = ActivityIndicatorView()
     
     @IBOutlet weak var listTableView: UITableView!
     
+    override func viewWillAppear(_ animated: Bool) {
+        listArr = UserDefaults.standard.array(forKey: "listUnitId") as? [String] ?? [String]()
+        listTableView.reloadData()
+        print(listArr)
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -89,6 +95,9 @@ class GrammarListViewController: NaviArrangeViewController,UITableViewDelegate,U
         
         guard let check = cell.contentView.viewWithTag(4) else { return cell }
         
+        let section = indexPath.section
+        let row = indexPath.row
+        
         cell.selectionStyle = .none
         view.layer.shadowOpacity = 0.2
         view.layer.shadowRadius = 3
@@ -97,9 +106,12 @@ class GrammarListViewController: NaviArrangeViewController,UITableViewDelegate,U
         check.layer.cornerRadius = 14
         check.layer.masksToBounds = true
         check.isHidden = true
-        
-        let section = indexPath.section
-        let row = indexPath.row
+        listArr.forEach{
+            if $0 == grammarArr[section][row].listUnitId{
+                check.isHidden = false
+            }
+        }
+
         title.text = "　" + (grammarArr[section][row].grammarTitle ?? "")
  
         return cell
@@ -109,6 +121,7 @@ class GrammarListViewController: NaviArrangeViewController,UITableViewDelegate,U
         let section = indexPath.section
         let row = indexPath.row
         grammarTitle = grammarArr[section][row].grammarTitle ?? ""
+        listUnitId = grammarArr[section][row].listUnitId ?? ""
         performSegue(withIdentifier: "segue_gmrContent", sender: grammarArr[section][row].unitId ?? "")
         
     }
@@ -137,7 +150,7 @@ class GrammarListViewController: NaviArrangeViewController,UITableViewDelegate,U
         operation.recordFetchedBlock = {(records:CKRecord?) in
             guard let record = records else { return }
             if record["levelId"] as! String == level.rawValue{
-                let data = GrammarList(levelId: record["levelId"] as! String, groupId: record["groupId"] as! String, grammarId: record["grammarId"] as! String, unitId: record["unitId"] as! String, grammarTitle: record["grammarTitle"] as! String)
+                let data = GrammarList(levelId: record["levelId"] as! String, groupId: record["groupId"] as! String, grammarId: record["grammarId"] as! String, unitId: record["unitId"] as! String, grammarTitle: record["grammarTitle"] as! String, listUnitId: record.recordID.recordName)
 
                 if self.grammarArr.last?.last?.groupId != data.groupId{
                     self.grammarArr.append([data])
@@ -191,6 +204,7 @@ class GrammarListViewController: NaviArrangeViewController,UITableViewDelegate,U
             if let toGrammarContentController = segue.destination as? GrammarContentController{
                 toGrammarContentController.unitId = sender as? String
                 toGrammarContentController.grammarTitle = grammarTitle
+                toGrammarContentController.listUnitId = listUnitId
             }
         }
     }

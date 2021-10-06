@@ -34,6 +34,8 @@ class GrammarContentController: NaviArrangeViewController, UITableViewDelegate,U
     
     var unitId:String?
     var grammarTitle:String?
+    var listUnitId:String?
+    var listArr = [String]()
     var words = [Words]()
     var content = GrammarContent()
     var loading = ActivityIndicatorView()
@@ -55,9 +57,10 @@ class GrammarContentController: NaviArrangeViewController, UITableViewDelegate,U
         
         queryGmrGuide(unitId: unitId ?? "")
         queryGmrTraining(unitId: unitId ?? "")
-        
+        listArr = UserDefaults.standard.array(forKey: "listUnitId") as? [String] ?? [""]
         var str = "a b c d"
         print(str.filter{ $0 != " " },"chu1")
+        print(listUnitId)
     }
     
     @IBAction func word(_ sender: UIButton) {
@@ -259,6 +262,8 @@ class GrammarContentController: NaviArrangeViewController, UITableViewDelegate,U
             if gmrTraining.page == 4{
                 let message = "\n" + gmrTraining.sentenceJ[gmrTraining.page] + "\n\n" + "練習完了"
                 alert.normalAlert(title: "正解！", message: message, okTitle: "確定", cancel: false, contro: self) { _ in
+                    self.listArr.append(self.listUnitId ?? "")
+                    UserDefaults.standard.set(self.listArr, forKey: "listUnitId")
                     self.navigationController?.popViewController(animated: true)
                 }
                 return
