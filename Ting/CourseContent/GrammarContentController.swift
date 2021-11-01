@@ -109,8 +109,8 @@ class GrammarContentController: NaviArrangeViewController, UITableViewDelegate,U
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "cell_word", for: indexPath) as? wordTableViewCell
         else { return UITableViewCell() }
         if tableView == wordView.wordTableView{
-            cell.wordcLb.text = "　\(words[indexPath.row].Chinese ?? "")"
-            cell.wordjLb.text = "　\(words[indexPath.row].Japanese ?? "")"
+            cell.wordcLb.text = "\(words[indexPath.row].Chinese ?? "")"
+            cell.wordjLb.text = "\(words[indexPath.row].Japanese ?? "")"
             cell.voiceBt.accessibilityIdentifier = String(indexPath.row)
             cell.voiceBt.addTarget(self, action: #selector(wordsVoice(sender:)), for: .touchUpInside)
             return cell
@@ -120,7 +120,7 @@ class GrammarContentController: NaviArrangeViewController, UITableViewDelegate,U
     
     @objc func wordsVoice(sender:UIButton){
         let exText = words[Int(sender.accessibilityIdentifier!)!].Chinese ?? ""
-        voice.speak(text: exText, language: .zh_TW, rate: 0.3, pitch: 1.0)
+        voice.speak(text: exText, language: .zh_TW, rate: 0.2, pitch: 1.0)
     }
     
     @objc func exVoice(){
@@ -128,11 +128,11 @@ class GrammarContentController: NaviArrangeViewController, UITableViewDelegate,U
         //let AVSpeechUtteranceMinimumSpeechRate: Float
         //let AVSpeechUtteranceDefaultSpeechRate: Float
         //let AVSpeechUtteranceMaximumSpeechRate: Float
-        voice.speak(text: exText, language: .zh_TW, rate: 0.4, pitch: 1.0)
+        voice.speak(text: exText, language: .zh_TW, rate: 0.2, pitch: 1.0)
     }
     
     @objc func trainingVoice(){
-        voice.speak(text: correctText ?? "", language: .zh_TW, rate: 0.4, pitch: 1.0)
+        voice.speak(text: correctText ?? "", language: .zh_TW, rate: 0.2, pitch: 1.0)
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {

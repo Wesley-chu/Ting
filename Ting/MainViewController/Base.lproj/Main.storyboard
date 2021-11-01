@@ -199,27 +199,63 @@
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="1" translatesAutoresizingMaskIntoConstraints="NO" id="oqI-SH-tbh">
                                         <rect key="frame" x="0.0" y="0.0" width="374" height="180"/>
                                         <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="　　お問い合わせ" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9rV-FY-Fp5">
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="eHb-LI-XNo">
                                                 <rect key="frame" x="0.0" y="0.0" width="374" height="89.5"/>
-                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                <nil key="textColor"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="　　アプリを評価" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LgD-4f-6jU">
+                                                <subviews>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="　　お問い合わせ" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9rV-FY-Fp5">
+                                                        <rect key="frame" x="0.0" y="0.0" width="374" height="89.5"/>
+                                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                        <nil key="textColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                </subviews>
+                                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="bottom" secondItem="9rV-FY-Fp5" secondAttribute="bottom" id="9MT-vc-kbI"/>
+                                                    <constraint firstAttribute="trailing" secondItem="9rV-FY-Fp5" secondAttribute="trailing" id="Jd4-NT-Vpf"/>
+                                                    <constraint firstItem="9rV-FY-Fp5" firstAttribute="top" secondItem="eHb-LI-XNo" secondAttribute="top" id="LV5-Yz-ewS"/>
+                                                    <constraint firstItem="9rV-FY-Fp5" firstAttribute="leading" secondItem="eHb-LI-XNo" secondAttribute="leading" id="mNk-mK-mrx"/>
+                                                </constraints>
+                                            </view>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="I2h-38-8ba">
                                                 <rect key="frame" x="0.0" y="90.5" width="374" height="89.5"/>
-                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                <nil key="textColor"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
-                                            <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="　　ツイター" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9bJ-7X-erQ">
+                                                <subviews>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="　　アプリを評価" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LgD-4f-6jU">
+                                                        <rect key="frame" x="0.0" y="0.0" width="374" height="89.5"/>
+                                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                        <nil key="textColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                </subviews>
+                                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                                <constraints>
+                                                    <constraint firstItem="LgD-4f-6jU" firstAttribute="top" secondItem="I2h-38-8ba" secondAttribute="top" id="AAI-pg-Vgm"/>
+                                                    <constraint firstAttribute="trailing" secondItem="LgD-4f-6jU" secondAttribute="trailing" id="Sbj-nF-iMn"/>
+                                                    <constraint firstAttribute="bottom" secondItem="LgD-4f-6jU" secondAttribute="bottom" id="cfX-3A-Ih0"/>
+                                                    <constraint firstItem="LgD-4f-6jU" firstAttribute="leading" secondItem="I2h-38-8ba" secondAttribute="leading" id="tDV-Da-ceH"/>
+                                                </constraints>
+                                            </view>
+                                            <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="c7o-Nb-TAs">
                                                 <rect key="frame" x="0.0" y="180" width="374" height="0.0"/>
-                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                <nil key="textColor"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
+                                                <subviews>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="　　ツイッター" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9bJ-7X-erQ">
+                                                        <rect key="frame" x="0.0" y="0.0" width="374" height="0.0"/>
+                                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                        <nil key="textColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                </subviews>
+                                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                                <constraints>
+                                                    <constraint firstItem="9bJ-7X-erQ" firstAttribute="leading" secondItem="c7o-Nb-TAs" secondAttribute="leading" id="40G-hh-Zaa"/>
+                                                    <constraint firstAttribute="trailing" secondItem="9bJ-7X-erQ" secondAttribute="trailing" id="5wz-VM-Tp6"/>
+                                                    <constraint firstAttribute="bottom" secondItem="9bJ-7X-erQ" secondAttribute="bottom" id="D1s-CN-csI"/>
+                                                    <constraint firstItem="9bJ-7X-erQ" firstAttribute="top" secondItem="c7o-Nb-TAs" secondAttribute="top" id="imu-gW-0Ww"/>
+                                                </constraints>
+                                            </view>
                                         </subviews>
                                     </stackView>
                                 </subviews>
@@ -258,7 +294,7 @@
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="JSZ-fY-yPW" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1821" y="1978"/>
+            <point key="canvasLocation" x="1820" y="2083"/>
         </scene>
         <!--AccountInfoViewController-->
         <scene sceneID="rz9-SQ-SbS">
@@ -672,6 +708,9 @@
         </scene>
     </scenes>
     <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
         <systemColor name="systemBlueColor">
             <color red="0.0" green="0.47843137254901963" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>

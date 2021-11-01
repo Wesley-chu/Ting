@@ -39,7 +39,7 @@
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
-                                                        <label opaque="NO" userInteractionEnabled="NO" tag="3" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="▶︎" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RCV-iT-e77">
+                                                        <label opaque="NO" userInteractionEnabled="NO" tag="3" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="go▶︎" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="6" translatesAutoresizingMaskIntoConstraints="NO" id="RCV-iT-e77">
                                                             <rect key="frame" x="336" y="0.0" width="58" height="58"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="width" constant="58" id="F44-IK-fmy"/>
@@ -457,7 +457,7 @@
                                                     <constraint firstAttribute="width" constant="200" id="Xsc-al-KKL"/>
                                                 </constraints>
                                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="25"/>
-                                                <color key="textColor" red="1" green="0.14913141730000001" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DE9-rW-EfD">
@@ -468,7 +468,7 @@
                                                 </constraints>
                                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="25"/>
                                                 <state key="normal" title="次へ">
-                                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <color key="titleColor" red="0.68235294117647061" green="0.68235294117647061" blue="0.69803921568627447" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 </state>
                                                 <connections>
                                                     <action selector="next:" destination="d0s-P0-Ode" eventType="touchUpInside" id="JtC-c7-ryf"/>
@@ -481,11 +481,11 @@
                                                     <constraint firstAttribute="height" constant="50" id="Kgm-WA-bs1"/>
                                                 </constraints>
                                                 <fontDescription key="fontDescription" type="system" pointSize="35"/>
-                                                <nil key="textColor"/>
+                                                <color key="textColor" red="0.34509803919999998" green="0.33725490200000002" blue="0.83921568629999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                         </subviews>
-                                        <color key="backgroundColor" systemColor="systemYellowColor"/>
+                                        <color key="backgroundColor" red="0.99607843137254903" green="0.97254901960784312" blue="0.79607843137254897" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <constraints>
                                             <constraint firstAttribute="trailing" secondItem="q63-GG-IRi" secondAttribute="trailing" constant="30" id="BCj-gZ-3Bu"/>
                                             <constraint firstItem="Es2-R1-F3b" firstAttribute="top" secondItem="0XW-Mq-GvC" secondAttribute="top" constant="20" id="Byl-o5-Kzc"/>

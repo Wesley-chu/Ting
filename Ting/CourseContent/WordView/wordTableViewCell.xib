@@ -21,18 +21,18 @@
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="aLk-qM-9oe">
                         <rect key="frame" x="0.0" y="0.0" width="240" height="44"/>
                         <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="ZYT-3T-KCZ">
-                                <rect key="frame" x="0.0" y="0.0" width="240" height="44"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="ZYT-3T-KCZ">
+                                <rect key="frame" x="15" y="0.0" width="225" height="44"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="　Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="h3I-oN-nDM">
-                                        <rect key="frame" x="0.0" y="0.0" width="120" height="44"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="h3I-oN-nDM">
+                                        <rect key="frame" x="0.0" y="0.0" width="110" height="44"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="　Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HbY-Cn-wZ8">
-                                        <rect key="frame" x="120" y="0.0" width="120" height="44"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HbY-Cn-wZ8">
+                                        <rect key="frame" x="115" y="0.0" width="110" height="44"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
@@ -41,7 +41,7 @@
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="ZYT-3T-KCZ" firstAttribute="leading" secondItem="aLk-qM-9oe" secondAttribute="leading" id="3dn-ce-ZxM"/>
+                            <constraint firstItem="ZYT-3T-KCZ" firstAttribute="leading" secondItem="aLk-qM-9oe" secondAttribute="leading" constant="15" id="3dn-ce-ZxM"/>
                             <constraint firstAttribute="bottom" secondItem="ZYT-3T-KCZ" secondAttribute="bottom" id="4fa-Zx-cwJ"/>
                             <constraint firstItem="ZYT-3T-KCZ" firstAttribute="top" secondItem="aLk-qM-9oe" secondAttribute="top" id="Hai-uu-g2P"/>
                             <constraint firstAttribute="trailing" secondItem="ZYT-3T-KCZ" secondAttribute="trailing" id="NH1-US-jXd"/>
