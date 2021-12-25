@@ -174,33 +174,8 @@ class GrammarListViewController: NaviArrangeViewController,UITableViewDelegate,U
         database.add(operation)
     }
     
-    
-    
-    
-//    func handleButton(cell:UITableViewCell, row:Int, gmr:[[GrammarList]]){
-//        for i in 1 ... 6{
-//            guard let button = cell.viewWithTag(i) as? UIButton else { return }
-//            button.isHidden = true
-//        }
-//        for i in gmr[row]{
-//            let gmrId = Int(i.grammarId!)!
-//            guard let button = cell.viewWithTag(gmrId) as? UIButton else { return }
-//            button.accessibilityIdentifier = i.unitId
-//            button.setTitle(i.grammarTitle, for: .normal)
-//            button.addTarget(self, action: #selector(postValue(sender:)), for: .touchUpInside)
-//            button.isHidden = false
-//        }
-//    }
-//    @objc func postValue(sender:UIButton){
-//        performSegue(withIdentifier: "segue_gmrTraining", sender: sender.accessibilityIdentifier)
-//    }
-    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "segue_gmrTraining"{
-            if let toGrammarTrainingViewController = segue.destination as? GrammarTrainingViewController{
-                toGrammarTrainingViewController.unitId = sender as? String
-            }
-        }else if segue.identifier == "segue_gmrContent" {
+        if segue.identifier == "segue_gmrContent" {
             if let toGrammarContentController = segue.destination as? GrammarContentController{
                 toGrammarContentController.unitId = sender as? String
                 toGrammarContentController.grammarTitle = grammarTitle

@@ -54,8 +54,6 @@
 		097C7BE62676246000EBCEBE /* pause.png in Resources */ = {isa = PBXBuildFile; fileRef = 097C7BE22676246000EBCEBE /* pause.png */; };
 		097C7BF3267B6CE000EBCEBE /* CourseContent.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 097C7BF2267B6CDF00EBCEBE /* CourseContent.storyboard */; };
 		097C7BF8267B6F8000EBCEBE /* GrammarListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 097C7BF7267B6F8000EBCEBE /* GrammarListViewController.swift */; };
-		097C7BFD267B72F300EBCEBE /* GrammarGuideViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 097C7BFC267B72F300EBCEBE /* GrammarGuideViewController.swift */; };
-		097C7C02267B738300EBCEBE /* GrammarTrainingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 097C7C01267B738300EBCEBE /* GrammarTrainingViewController.swift */; };
 		097C7C1D2680C0A600EBCEBE /* VoiceManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 097C7C1C2680C0A400EBCEBE /* VoiceManager.swift */; };
 		0988F6792691BB7E0030C8A4 /* AlertView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0988F6782691BB7D0030C8A4 /* AlertView.swift */; };
 		0988F6952691F22B0030C8A4 /* RegisterLogin.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0988F6942691F22B0030C8A4 /* RegisterLogin.storyboard */; };
@@ -147,8 +145,6 @@
 		097C7BE22676246000EBCEBE /* pause.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = pause.png; sourceTree = "<group>"; };
 		097C7BF2267B6CDF00EBCEBE /* CourseContent.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = CourseContent.storyboard; sourceTree = "<group>"; };
 		097C7BF7267B6F8000EBCEBE /* GrammarListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GrammarListViewController.swift; sourceTree = "<group>"; };
-		097C7BFC267B72F300EBCEBE /* GrammarGuideViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GrammarGuideViewController.swift; sourceTree = "<group>"; };
-		097C7C01267B738300EBCEBE /* GrammarTrainingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GrammarTrainingViewController.swift; sourceTree = "<group>"; };
 		097C7C1C2680C0A400EBCEBE /* VoiceManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VoiceManager.swift; sourceTree = "<group>"; };
 		0988F6782691BB7D0030C8A4 /* AlertView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertView.swift; sourceTree = "<group>"; };
 		0988F6942691F22B0030C8A4 /* RegisterLogin.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = RegisterLogin.storyboard; sourceTree = "<group>"; };
@@ -386,8 +382,6 @@
 				0917F46426F7830B009D51BE /* TrainingView */,
 				097C7BF2267B6CDF00EBCEBE /* CourseContent.storyboard */,
 				097C7BF7267B6F8000EBCEBE /* GrammarListViewController.swift */,
-				097C7C01267B738300EBCEBE /* GrammarTrainingViewController.swift */,
-				097C7BFC267B72F300EBCEBE /* GrammarGuideViewController.swift */,
 				0926338E26F380AB001AE017 /* GrammarContentController.swift */,
 			);
 			path = CourseContent;
@@ -629,7 +623,6 @@
 				09264FEC26FA117800761B5C /* wordTableViewCell.swift in Sources */,
 				097C7B0E266CAA5800EBCEBE /* AppDelegate.swift in Sources */,
 				097C7C1D2680C0A600EBCEBE /* VoiceManager.swift in Sources */,
-				097C7C02267B738300EBCEBE /* GrammarTrainingViewController.swift in Sources */,
 				0988F6D8269DD8B00030C8A4 /* AccountInfoViewController.swift in Sources */,
 				0988F69A2691F2780030C8A4 /* LoginViewController.swift in Sources */,
 				0988F6C5269DCB270030C8A4 /* CollectionViewLayout.swift in Sources */,
@@ -639,7 +632,6 @@
 				09264FFB26FA5B0200761B5C /* NaviArrangeViewController.swift in Sources */,
 				097C7BAC266FB40800EBCEBE /* PlanViewController.swift in Sources */,
 				097C7BF8267B6F8000EBCEBE /* GrammarListViewController.swift in Sources */,
-				097C7BFD267B72F300EBCEBE /* GrammarGuideViewController.swift in Sources */,
 				0988F6792691BB7E0030C8A4 /* AlertView.swift in Sources */,
 				097C7BC6267233FB00EBCEBE /* VideoListViewController.swift in Sources */,
 				0988F6BA2699DA820030C8A4 /* Random.swift in Sources */,
@@ -836,7 +828,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = Ting/Ting.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 9;
+				CURRENT_PROJECT_VERSION = 10;
 				DEVELOPMENT_TEAM = 2X49Y8FTV3;
 				INFOPLIST_FILE = Ting/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
@@ -860,7 +852,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = Ting/Ting.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 9;
+				CURRENT_PROJECT_VERSION = 10;
 				DEVELOPMENT_TEAM = 2X49Y8FTV3;
 				INFOPLIST_FILE = Ting/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
