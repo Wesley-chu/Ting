@@ -23,6 +23,7 @@
 		09264FFB26FA5B0200761B5C /* NaviArrangeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09264FFA26FA5B0200761B5C /* NaviArrangeViewController.swift */; };
 		0926504527004D0400761B5C /* trainingCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0926504327004D0400761B5C /* trainingCollectionViewCell.swift */; };
 		0926504627004D0400761B5C /* trainingCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0926504427004D0400761B5C /* trainingCollectionViewCell.xib */; };
+		0946CE1E27F48F120013A8A0 /* MuteDetector.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0946CE1D27F48F0F0013A8A0 /* MuteDetector.swift */; };
 		097C7B0E266CAA5800EBCEBE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 097C7B0D266CAA5800EBCEBE /* AppDelegate.swift */; };
 		097C7B10266CAA5800EBCEBE /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 097C7B0F266CAA5800EBCEBE /* SceneDelegate.swift */; };
 		097C7B12266CAA5800EBCEBE /* VideoPlayerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 097C7B11266CAA5800EBCEBE /* VideoPlayerViewController.swift */; };
@@ -107,6 +108,7 @@
 		09264FFA26FA5B0200761B5C /* NaviArrangeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NaviArrangeViewController.swift; sourceTree = "<group>"; };
 		0926504327004D0400761B5C /* trainingCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = trainingCollectionViewCell.swift; sourceTree = "<group>"; };
 		0926504427004D0400761B5C /* trainingCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = trainingCollectionViewCell.xib; sourceTree = "<group>"; };
+		0946CE1D27F48F0F0013A8A0 /* MuteDetector.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MuteDetector.swift; sourceTree = "<group>"; };
 		097C7B0A266CAA5800EBCEBE /* Ting.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Ting.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		097C7B0D266CAA5800EBCEBE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		097C7B0F266CAA5800EBCEBE /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -330,6 +332,7 @@
 				097C7B68266CF3C500EBCEBE /* UIColor+.swift */,
 				0988F6C9269DCCE50030C8A4 /* Account.swift */,
 				0988F6DF269F1BB90030C8A4 /* EncryptionRSA.swift */,
+				0946CE1D27F48F0F0013A8A0 /* MuteDetector.swift */,
 			);
 			path = Module;
 			sourceTree = "<group>";
@@ -619,6 +622,7 @@
 				097C7BB1266FB47A00EBCEBE /* FavoriteViewController.swift in Sources */,
 				097C7B80266D01DE00EBCEBE /* CoreDataManager.swift in Sources */,
 				097C7B73266CFB2400EBCEBE /* YTManager.swift in Sources */,
+				0946CE1E27F48F120013A8A0 /* MuteDetector.swift in Sources */,
 				097C7B56266CBF3100EBCEBE /* Enum.swift in Sources */,
 				09264FEC26FA117800761B5C /* wordTableViewCell.swift in Sources */,
 				097C7B0E266CAA5800EBCEBE /* AppDelegate.swift in Sources */,
@@ -828,7 +832,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = Ting/Ting.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 10;
+				CURRENT_PROJECT_VERSION = 12;
 				DEVELOPMENT_TEAM = 2X49Y8FTV3;
 				INFOPLIST_FILE = Ting/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
@@ -852,7 +856,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = Ting/Ting.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 10;
+				CURRENT_PROJECT_VERSION = 12;
 				DEVELOPMENT_TEAM = 2X49Y8FTV3;
 				INFOPLIST_FILE = Ting/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;

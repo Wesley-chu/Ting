@@ -48,7 +48,7 @@ class GrammarContentController: NaviArrangeViewController, UITableViewDelegate,U
     var bottom: NSLayoutConstraint?
     var bottom2: NSLayoutConstraint?
     var strForAnswer = ""
-    
+    var isMute = false
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -61,6 +61,15 @@ class GrammarContentController: NaviArrangeViewController, UITableViewDelegate,U
         var str = "a b c d"
         print(str.filter{ $0 != " " },"chu1")
         print(listUnitId)
+        
+//        EBMuteDetector.shared.detect {
+//            self.isMute = $0
+//        }
+        
+        if isMute {
+            print("chu1111")
+        }
+        
     }
     
     @IBAction func word(_ sender: UIButton) {
@@ -116,6 +125,13 @@ class GrammarContentController: NaviArrangeViewController, UITableViewDelegate,U
             return cell
         }
         return cell
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        if tableView == wordView.wordTableView{
+            let exText = words[indexPath.row].Chinese ?? ""
+            voice.speak(text: exText, language: .zh_TW, rate: 0.2, pitch: 1.0)
+        }
     }
     
     @objc func wordsVoice(sender:UIButton){
