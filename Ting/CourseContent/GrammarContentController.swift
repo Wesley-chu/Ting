@@ -66,6 +66,7 @@ class GrammarContentController: NaviArrangeViewController, UITableViewDelegate,U
 //            self.isMute = $0
 //        }
         
+        
         if isMute {
             print("chu1111")
         }
