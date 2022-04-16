@@ -62,9 +62,9 @@ class GrammarContentController: NaviArrangeViewController, UITableViewDelegate,U
         print(str.filter{ $0 != " " },"chu1")
         print(listUnitId)
         
-//        EBMuteDetector.shared.detect {
-//            self.isMute = $0
-//        }
+        EBMuteDetector.shared.detect {
+            self.isMute = $0
+        }
         
         if isMute {
             print("chu1111")
