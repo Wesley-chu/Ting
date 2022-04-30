@@ -9,11 +9,11 @@ import Foundation
 import UIKit
 
 extension UIColor {
-    static var cusLightYellow: UIColor { return #colorLiteral(red: 1, green: 0.8, blue: 0, alpha: 1) }
-    static var cusPinkYellow: UIColor { return #colorLiteral(red: 0.9960784314, green: 0.9725490196, blue: 0.7960784314, alpha: 1) }
-    static var cusDarkGray: UIColor { return #colorLiteral(red: 0.6823529412, green: 0.6823529412, blue: 0.6980392157, alpha: 1) }
-    static var cusLightGray: UIColor { return #colorLiteral(red: 0.9490196078, green: 0.9490196078, blue: 0.968627451, alpha: 1) }
-    static var cusIndigo: UIColor { return #colorLiteral(red: 0.3450980392, green: 0.337254902, blue: 0.8392156863, alpha: 1) }
+    static var cusLightYellow: UIColor { return #colorLiteral(red: 1, green: 0.8, blue: 0, alpha: 1) } //#FFCC00
+    static var cusPinkYellow: UIColor { return #colorLiteral(red: 0.9960784314, green: 0.9725490196, blue: 0.7960784314, alpha: 1) } //#FEF8CB
+    static var cusDarkGray: UIColor { return #colorLiteral(red: 0.6823529412, green: 0.6823529412, blue: 0.6980392157, alpha: 1) } //#AEAEB2
+    static var cusLightGray: UIColor { return #colorLiteral(red: 0.9490196078, green: 0.9490196078, blue: 0.968627451, alpha: 1) } //#F2F2F7
+    static var cusIndigo: UIColor { return #colorLiteral(red: 0.3450980392, green: 0.337254902, blue: 0.8392156863, alpha: 1) } //#5856D6
     
     // Hex String -> UIColor
     convenience init(hexString: String) {
